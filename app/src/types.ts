@@ -70,7 +70,7 @@ export interface ScoredCounty {
   name: string;
   state: string;
   score: number;
-  breakdown: Record<string, number>;
+  breakdown: Record<string, number | null>;
 }
 
 export interface ScoreResponse {
