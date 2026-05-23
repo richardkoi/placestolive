@@ -1,0 +1,54 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Node
+node_modules/
+dist/
+build/
+.next/
+.cache/
+.vite/
+
+# Env
+.env
+.env.*
+!.env.example
+
+# IDE
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Local data — raw downloads are huge (3+ GB), never commit
+data/raw/
+data/local/
+
+# SQLite — commit the small built DB so clones work out of the box,
+# but ignore other databases (e.g. local scratch / backups)
+*.db
+*.sqlite
+!data/counties.sqlite
+!data/counties.sqlite.example
+
+# QA + test artifacts
+app/qa-screenshots/
+app/test-results/
+app/playwright-report/
+app/.playwright/
+
+# Documentation Open-Meteo failures, internal notes etc.
+.scratch/

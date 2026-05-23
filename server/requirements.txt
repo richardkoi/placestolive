@@ -1,0 +1,9 @@
+fastapi>=0.115
+uvicorn[standard]>=0.32
+pydantic>=2.9
+pandas>=2.2
+requests>=2.32
+python-dotenv>=1.0
+pytest>=8.3
+httpx>=0.27          # required by fastapi.testclient
+responses>=0.25      # mock HTTP for pipeline tests

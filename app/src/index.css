@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+/* +25% global font scale — bumping the root from 16px to 20px scales every
+   rem-based Tailwind utility by the same factor (text-xs = 15px, text-sm = 17.5px,
+   text-base = 20px). */
+html {
+  font-size: 20px;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  background: var(--bg, #0a0f1c);
+  color: var(--text, #e5e7eb);
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Light-mode adjustments for elements we don't restyle via inline vars */
+:root[data-theme="light"] {
+  color-scheme: light;
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+/* MapLibre needs explicit size; container provides it via Tailwind */
+.maplibregl-canvas:focus { outline: none; }
+
+/* ---- Light-mode overlays for the dark-themed Tailwind utilities we use ----
+   Rather than refactor every component to drop slate-* classes, we override
+   them via attribute selectors when light mode is active. */
+:root[data-theme="light"] .text-slate-100,
+:root[data-theme="light"] .text-slate-200 { color: var(--text); }
+:root[data-theme="light"] .text-slate-300 { color: var(--text); }
+:root[data-theme="light"] .text-slate-400 { color: var(--text-muted); }
+:root[data-theme="light"] .text-slate-500 { color: var(--text-muted); }
+:root[data-theme="light"] .text-indigo-300,
+:root[data-theme="light"] .text-indigo-400 { color: var(--accent); }
+:root[data-theme="light"] .border-slate-600,
+:root[data-theme="light"] .border-slate-700,
+:root[data-theme="light"] .border-slate-800 { border-color: var(--border); }
+:root[data-theme="light"] .bg-slate-800,
+:root[data-theme="light"] .bg-slate-800\/30,
+:root[data-theme="light"] .bg-slate-800\/60,
+:root[data-theme="light"] .bg-slate-800\/70 { background-color: var(--hover); }
+:root[data-theme="light"] .bg-slate-900,
+:root[data-theme="light"] .bg-slate-900\/30,
+:root[data-theme="light"] .bg-slate-900\/60,
+:root[data-theme="light"] .bg-slate-900\/80,
+:root[data-theme="light"] .bg-slate-900\/95 { background-color: var(--panel-strong); }
+:root[data-theme="light"] .bg-slate-950 { background-color: var(--bg); }
+:root[data-theme="light"] .bg-indigo-900\/30,
+:root[data-theme="light"] .bg-indigo-900\/40,
+:root[data-theme="light"] .bg-indigo-950\/30 { background-color: rgba(99, 102, 241, 0.1); }
+:root[data-theme="light"] .border-indigo-500\/50,
+:root[data-theme="light"] .border-indigo-700\/50 { border-color: var(--accent); }
+:root[data-theme="light"] .accent-indigo-500 { accent-color: var(--accent); }
+:root[data-theme="light"] .divide-slate-800 > * + * { border-color: var(--border); }
+:root[data-theme="light"] .placeholder-slate-500::placeholder { color: var(--text-muted); }
