@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>placestolive — docs</title>
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <style>
       :root {
@@ -129,8 +129,8 @@
   <body>
     <header>
       <h1><span class="accent">places</span>tolive · docs</h1>
-      <a href="/">← back to app</a>
-      <a class="download-btn" href="/build-your-own.md" download="placestolive-build-your-own.md">
+      <a href="./">← back to app</a>
+      <a class="download-btn" href="build-your-own.md" download="placestolive-build-your-own.md">
         ⬇ Download this guide (.md)
       </a>
     </header>
@@ -142,7 +142,7 @@
           and the data sources that died mid-build. The most reusable part isn't the code — it's the
           conversation patterns. Download the markdown to keep a copy.
         </p>
-        <a class="download-inline" href="/build-your-own.md" download="placestolive-build-your-own.md">
+        <a class="download-inline" href="build-your-own.md" download="placestolive-build-your-own.md">
           ⬇ Download as markdown
         </a>
       </div>
@@ -152,7 +152,7 @@
     </main>
     <script>
       // Fetch the markdown and render it into the article element
-      fetch("/build-your-own.md")
+      fetch("build-your-own.md")
         .then((r) => r.text())
         .then((md) => {
           const html = window.marked.parse(md);

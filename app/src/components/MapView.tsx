@@ -99,7 +99,7 @@ export function MapView({ counties, onSelect, anchorFips, paletteStops, themeMod
     mapRef.current = map;
 
     map.on("load", async () => {
-      const fc = (await fetch("/counties.geojson").then((r) => r.json())) as FeatureCollection<
+      const fc = (await fetch(new URL("counties.geojson", document.baseURI).href).then((r) => r.json())) as FeatureCollection<
         Geometry,
         CountyProps
       >;
@@ -213,7 +213,7 @@ export function MapView({ counties, onSelect, anchorFips, paletteStops, themeMod
       // Major city labels — top 400 cities by population.
       // Population threshold ramps with zoom so we don't overcrowd the lower-48 view.
       try {
-        const cities = await fetch("/cities.geojson").then((r) => r.json());
+        const cities = await fetch(new URL("cities.geojson", document.baseURI).href).then((r) => r.json());
         map.addSource("cities", { type: "geojson", data: cities });
         map.addLayer({
           id: "cities-dot",

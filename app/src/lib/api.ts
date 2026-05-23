@@ -31,7 +31,8 @@ export interface CountySearchResult {
 let datasetPromise: Promise<CountiesDataset> | null = null;
 function loadDataset(): Promise<CountiesDataset> {
   if (!datasetPromise) {
-    datasetPromise = fetch("/counties.json")
+    // Relative path so deploys under any subdirectory (e.g. /placestolive/) work
+    datasetPromise = fetch(new URL("counties.json", document.baseURI).href)
       .then((r) => {
         if (!r.ok) throw new Error(`counties.json: ${r.status}`);
         return r.json();

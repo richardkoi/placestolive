@@ -231,7 +231,7 @@ export default function App() {
             Quiz
           </button>
           <a
-            href="/docs.html"
+            href="docs.html"
             target="_blank"
             rel="noopener noreferrer"
             className="text-xs px-2 py-1 rounded border"

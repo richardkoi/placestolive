@@ -95,7 +95,7 @@ export function WelcomeModal({ forceOpen = false, onStartQuiz }: Props) {
           Data: 2024 election · Census ACS 2023 · FEMA NRI · NOAA Climate Normals 1991-2020 ·
           EPA AQI · CHR 2024 · USGS elevation. See the{" "}
           <a
-            href="/docs.html"
+            href="docs.html"
             target="_blank"
             rel="noopener noreferrer"
             className="text-indigo-400 hover:text-indigo-300 underline"
